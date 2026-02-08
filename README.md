@@ -2,7 +2,7 @@
 
 This is the "twin project" of **FT8-band-opening-detector** (https://github.com/HA2ZB/FT8-band-opening-detector).
 
-This project monitors **WSJT-X WSPR decodes via UDP**, classifies stations as **DX / non-DX** using a configurable prefix blacklist, and provides:
+This project monitors **WSJT-X WSPR decodes via UDP**, classifies stations as **DX / non-DX** using a configurable distance parameter, and provides:
 
 - **Visual indication via GPIO LED**
   - steady ON while DX activity is present
@@ -229,8 +229,7 @@ LED is connected to `PI6` with a 5k resistor to GND.
 
 ## Notes and limitations
 
-- DX classification is **prefix-based**, not distance-based
-- Grid information may be missing from individual decodes and is optional
+- DX classification is **distance-based**, using the decoded grid information
 - Dial frequency is taken from WSJT-X status packets  
   (ensure the WSJT-X band matches the actual manually tuned band)
 
